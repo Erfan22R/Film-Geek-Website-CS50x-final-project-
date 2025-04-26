@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<body class="details">
+    <header>
+        <h1><a href="/">Film Geek</a></h1>
+        <!-- <div id="mySidenav" class="sidenav">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
+        </div> -->
+    </header>
+    <main>
+        <h1>{{ movie['Title'] }}({{ movie['Year'] }})</h1>
+        <div class="movie-details">
+            <div class="movie-poster">
+                <img src="{{ movie['Poster'] }}" alt="{{ movie['Title'] }}">
+            </div>
+            <div class="movie-info">
+                <ul>
+                    <li><p><strong>Genre:</strong> {{ movie['Genre'] }}</p></li>
+                    <li><p><strong>Director:</strong> {{ movie['Director'] }}</p></li>
+                    <li><p><strong>Writer:</strong> {{ movie['Writer'] }}</p></li>
+                    <li><p><strong>Actors:</strong> {{ movie['Actors'] }}</p></li>
+                    <li><p><strong>Language:</strong> {{ movie['Language'] }}</p></li>
+                    <li><p><strong>Country:</strong> {{ movie['Country'] }}</p></li>
+                    <li><p><strong>Awards:</strong> {{ movie['Awards'] }}</p></li>
+                    <li><p><strong>IMDb Rating:</strong> {{ movie['imdbRating'] }}</p></li>
+                    <li><p><strong>imdbVotes:</strong> {{ movie['imdbVotes'] }}</p></li>
+                    <li><p><strong>Box Office:</strong> {{ movie['BoxOffice'] }}</p></li>
+                    <li><p><strong>Rated:</strong> {{ movie['Rated'] }}</p></li>
+                    <li><p><strong>Released:</strong> {{ movie['Released'] }}</p></li>
+                    <li><p><strong>Runtime:</strong> {{ movie['Runtime'] }}</p></li>
+                    <li><p><strong>Metascore:</strong> {{ movie['Metascore'] }}</p></li>
+                </ul>
+                <p><strong>Plot:</strong> {{ movie['Plot'] }}</p>
+            </div>
+        </div>
+        <Button type="submit"><a href="/search">Back to Results</a></Button>
+    </main>
+    <footer>
+        <p>© 2024 Film Geek</p>
+    </footer>
+</body>
+{% endblock %}

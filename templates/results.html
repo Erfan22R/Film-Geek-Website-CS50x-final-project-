@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}
+<body class="results">
+    <header>
+        <h1><a href="/">Film Geek</a></h1>
+        <!-- <div id="mySidenav" class="sidenav">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
+        </div> -->
+    </header>
+    <main>
+        <h1>Search Results</h1>
+        <div class="container">
+            {% for movie in results %}
+            <div style="width: 200px; text-align: center;">
+                <a href="/movie/{{ movie['imdbID'] }}">
+                    <img src="{{ movie['Poster'] }}" alt="{{ movie['Title'] }}" style="width: 100%; height: auto;">
+                    <h3>{{ movie['Title'] }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <Button type="submit"><a href="/">Back to Search</a></Button>
+    </main>
+    <footer>
+        <p>© 2024 Film Geek</p>
+    </footer>
+</body>
+{% endblock %}
